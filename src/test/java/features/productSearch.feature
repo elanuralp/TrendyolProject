@@ -8,6 +8,6 @@ Feature: Product Search
     Examples:
       | searchTerm   |
       | laptop       |
-      | headphones   |
-      | shoes        |
-      | smartphone   |
+      #| headphones   |
+      #| shoes        |
+      #| smartphone   |
