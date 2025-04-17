@@ -38,6 +38,6 @@ public class SearchFunctionalitySteps {
                 searchResultsPage.isResultDisplayed(searchTerm),
                 "Search results do not contain the keyword: " + searchTerm
         );
-        driver.quit();
+        //driver.quit();
     }
 }
