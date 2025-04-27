@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,6 +25,14 @@ public class HomePage {
 
     @FindBy(css = "button#onetrust-accept-btn-handler")
     WebElement acceptCookiesButton;
+
+    @FindBy(xpath = "//p[contains(text(),'Giriş Yap')]")
+    WebElement loginOrRegisterButton;
+
+    // (usually appears after login)
+    @FindBy(xpath = "//p[contains(text(),'Çıkış Yap')]")
+    WebElement logoutButton;
+
 
 
     public HomePage(WebDriver driver) {
@@ -60,6 +67,18 @@ public class HomePage {
             // Cookie popup not present, do nothing
         }
     }
+
+
+    public void goToLoginOrRegister(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(loginOrRegisterButton)).click();
+    }
+
+    public void logout(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(logoutButton)).click();
+    }
+
 
 
 

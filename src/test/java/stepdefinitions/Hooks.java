@@ -29,7 +29,7 @@ public class Hooks {
         // Quit the WebDriver instance after each scenario
         WebDriver driver = driverManager.getDriver();
         if (driver != null) {
-            //driver.quit();
+            driver.quit();
         }
     }
 }

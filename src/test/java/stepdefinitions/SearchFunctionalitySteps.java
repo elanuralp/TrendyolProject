@@ -20,8 +20,8 @@ public class SearchFunctionalitySteps {
         this.driverManager = driverManager;
     }
 
-    @Given("the user is on the Trendyol homepage")
-    public void the_user_is_on_the_trendyol_homepage() {
+    @Given("the user is on the Trendyol homepage for search")
+    public void the_user_is_on_the_trendyol_homepage_for_search() {
         driver = driverManager.getDriver();
         driver.get("https://www.trendyol.com/");
         homePage = new HomePage(driver);
@@ -38,6 +38,6 @@ public class SearchFunctionalitySteps {
                 searchResultsPage.isResultDisplayed(searchTerm),
                 "Search results do not contain the keyword: " + searchTerm
         );
-        //driver.quit();
+        driver.quit();
     }
 }
